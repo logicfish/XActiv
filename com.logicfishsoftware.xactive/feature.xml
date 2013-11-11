@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.logicfishsoftware.xactive"
+      label="Xactive"
+      version="1.0.0.qualifier"
+      provider-name="LOGICFISHSOFTWARE">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.xtend.lib" version="2.4.3" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore" version="2.9.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext.common.types" version="2.4.3" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext.xbase" version="2.4.3" match="greaterOrEqual"/>
+      <import plugin="com.logicfishsoftware.commons.xtend" version="1.1.0" match="greaterOrEqual"/>
+      <import plugin="com.google.inject" version="3.0.0" match="greaterOrEqual"/>
+      <import plugin="com.logicfishsoftware.commons.pde" version="1.1.0" match="greaterOrEqual"/>
+      <import plugin="com.logicfishsoftware.commons.emf" version="1.1.0" match="greaterOrEqual"/>
+      <import plugin="com.logicfishsoftware.xtend.xactive.lib" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext.xbase.lib" version="2.4.3" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="com.logicfishsoftware.xtend.xactive"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.logicfishsoftware.xtend.xactive.lib"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

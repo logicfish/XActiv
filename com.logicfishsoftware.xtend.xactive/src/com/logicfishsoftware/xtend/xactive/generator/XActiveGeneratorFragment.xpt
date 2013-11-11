@@ -1,0 +1,62 @@
+«IMPORT org::eclipse::xtext»
+
+«EXTENSION com::logicfishsoftware::xtend::xactive::generator::XActiveGeneratorFragment»
+«EXTENSION org::eclipse::xtext::generator::Naming»
+
+«DEFINE generate FOR Grammar»
+
+«FILE qualifiedInjectorProviderName().asPath() + "Default.xtend" SRC_GEN»
+package «qualifiedInjectorProviderName().toJavaPackage()»
+
+import org.eclipse.core.runtime.Platform
+import com.logicfishsoftware.commons.emf.RuntimeInjectorProvider
+
+class «qualifiedInjectorProviderName().toSimpleName()»Default {
+	def static Class<? extends RuntimeInjectorProvider> getDefaultProvider() {
+		try {
+			if(Platform.isRunning()) { 
+				val bundle = Platform.getBundle("«getNaming().projectNameUi»")
+				if(bundle!=null) return  bundle.loadClass("«qualifiedUiInjectorProviderName()»") as Class<? extends RuntimeInjectorProvider>
+			}
+		} catch (Throwable e) {}
+		return typeof(«qualifiedInjectorProviderName()») 
+	}
+}
+«ENDFILE»
+
+«FILE qualifiedInjectorProviderName().asPath() + ".xtend" SRC_GEN»
+package «qualifiedInjectorProviderName().toJavaPackage()»
+
+import com.google.inject.Injector
+import com.google.inject.Guice
+
+import com.logicfishsoftware.commons.emf.RuntimeInjectorProvider
+
+class «qualifiedInjectorProviderName().toSimpleName()» implements RuntimeInjectorProvider {
+	override Injector getInjector() {
+		return Guice.createInjector(new «guiceModuleRt()»())
+	}
+} 
+«ENDFILE»
+
+«FILE qualifiedUiInjectorProviderName().asPath() + ".xtend" SRC_GEN_UI»
+package «qualifiedUiInjectorProviderName().toJavaPackage()»
+
+import com.google.inject.Injector
+
+import com.logicfishsoftware.commons.emf.RuntimeInjectorProvider
+
+class «qualifiedUiInjectorProviderName().toSimpleName()» implements RuntimeInjectorProvider {
+	override Injector getInjector() {
+		return «activatorName()».getInstance().getInjector("«name»")
+	}
+} 
+«ENDFILE»
+
+«ENDDEFINE»
+
+«DEFINE addToPluginXmlUi FOR Grammar»«ENDDEFINE»
+
+«DEFINE addToPluginXmlRt FOR Grammar»«ENDDEFINE»
+
+«DEFINE addToStandaloneSetup FOR Grammar»«ENDDEFINE»

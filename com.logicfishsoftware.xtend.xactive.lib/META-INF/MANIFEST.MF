@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Lib
+Bundle-SymbolicName: com.logicfishsoftware.xtend.xactive.lib
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: LOGICFISHSOFTWARE
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.eclipse.xtext.xbase.lib;bundle-version="2.4.3",
+ org.eclipse.xtext.xbase;bundle-version="2.4.3",
+ org.eclipse.emf.ecore;bundle-version="2.9.1",
+ com.logicfishsoftware.commons.xtend;bundle-version="1.1.0",
+ com.google.inject;bundle-version="3.0.0",
+ org.eclipse.xtext;bundle-version="2.4.3"
+Export-Package: com.logicfishsoftware.xtend.xactive.lib,
+ com.logicfishsoftware.xtend.xactive.lib.annotations
+Bundle-ClassPath: bin/

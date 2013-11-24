@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://logicfishsoftware.com/xactive/example/Domainmodel" 
+       class = "com.logicfishsoftware.example.xactive.domainmodel.domainmodel.DomainmodelPackage"
+       genModel = "com/logicfishsoftware/example/xactive/domainmodel/Domainmodel.genmodel" /> 
+	
+  </extension>
+
+
+
+
+
+</plugin>
